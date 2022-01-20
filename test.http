@@ -1,0 +1,77 @@
+@url = http://127.0.0.1:3000/inventory
+@json = Content-Type: application/json
+
+###create card
+post {{url}}/create
+{{json}}
+
+{
+    "name" : "apple",
+    "tags" : ["fruit"]
+}
+
+###create card
+post {{url}}/create
+{{json}}
+
+{
+    "name" : "tomato",
+    "tags" : ["fruit", "vegetable"]
+}
+
+###create card
+post {{url}}/create
+{{json}}
+
+{
+    "name" : "cabbage",
+    "tags" : ["vegetable"]
+}
+
+###get card
+get {{url}}/showAll
+
+###update card
+put {{url}}/edit
+{{json}}
+
+{
+    "item_name" : "apple",
+    "name" : "Apple"
+}
+
+###update card
+put {{url}}/edit
+{{json}}
+
+{
+    "item_name" : "Apple",
+    "name" : "apple",
+    "count" : 2
+}
+
+###create card
+post {{url}}/create
+{{json}}
+
+{
+    "name" : "cabbage1",
+    "tags" : ["vegetable"]
+}
+
+###delete card
+delete {{url}}/delete
+{{json}}
+
+{
+    "name" : "cabbage1"
+}
+
+###get items by names through regex matching
+get {{url}}/show/name/cge
+
+###get items by tags
+get {{url}}/show/tags/fruit
+
+###get items by counts
+get {{url}}/show/count/2-*
