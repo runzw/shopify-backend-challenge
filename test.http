@@ -71,7 +71,7 @@ delete {{url}}/delete
 get {{url}}/show/name/cge
 
 ###get items by tags
-get {{url}}/show/tags/fruit
+get {{url}}/show/tags/ddaa
 
 ###get items by counts
 get {{url}}/show/count/2-*
